@@ -1,0 +1,68 @@
+body {
+  margin: 20px;
+  font-family: "Syne Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.avatar {
+  width: 150px;
+}
+
+.card {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  background: #ffb703;
+  color: #023047;
+  border-bottom: 10px solid #9e2a2b;
+  border-radius: 10px;
+  box-shadow:
+    #efebce -5px 5px,
+    #3a7ca5 -10px 10px,
+    rgba(240, 46, 170, 0.2) -15px 15px,
+    rgba(240, 46, 170, 0.1) -20px 20px,
+    rgba(240, 46, 170, 0.05) -25px 25px;
+
+  animation-name: myAnimation;
+
+  /* 2. Hoe lang duurt één cyclus */
+  animation-duration: 2s;
+
+  /* 3. Versnelling (langzaam begin/eind, snel in het midden) */
+  animation-timing-function: ease-in-out;
+
+  /* 4. Wacht 1 seconde voor de start */
+  animation-delay: 1s;
+
+  /* 5. Blijf de animatie herhalen */
+  animation-iteration-count: infinite;
+
+  /* 6. Speel heen en weer (vooruit, dan achteruit) */
+  animation-direction: alternate;
+
+  /* 7. Behoud de stijl van de laatste keyframe (indien niet op infinite) */
+  animation-fill-mode: forwards;
+}
+.card:hover {
+  width: 100%;
+  height: auto;
+}
+.border-blue {
+  border: 1px dotted blue;
+}
+@keyframes myAnimation {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(50px) scale(1);
+    background-color: #2e86de; /* Verandert van kleur in het midden */
+  }
+  100% {
+    transform: translateX(300px) scale(1);
+  }
+}
